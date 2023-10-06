@@ -9,20 +9,21 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* KaistBlueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* KaistBlueTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-KaistBlue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-KaistBlue.a */; };
+		11BEF5417B9A401C9FAF87BD /* NanumSquareNeoOTF-Bd.otf in Resources */ = {isa = PBXBuildFile; fileRef = B228BDC6008E42A4AC4EE31F /* NanumSquareNeoOTF-Bd.otf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		34A5B45A346C4C5D9DCE7D01 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A373C5D13694F3DA8E41C4D /* NanumGothicLight.otf */; };
+		46C409650AD042BB9DB0DDB8 /* NanumSquareNeoOTF-Hv.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC0A1245642949FB80E7759F /* NanumSquareNeoOTF-Hv.otf */; };
+		53C7739A2AD02CC4000C7F91 /* splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 53C773992AD02CC4000C7F91 /* splashscreen.png */; };
+		5A7FFDADAAB74BB2B5E71551 /* NanumSquareNeoOTF-Eb.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77BABC604F4C458A975E3F96 /* NanumSquareNeoOTF-Eb.otf */; };
+		64130F0ECF744B5A890C6354 /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 774184C28B0C47E68E1B8B27 /* NanumGothicExtraBold.otf */; };
+		72CFF4888D56495CB9F9C8A6 /* NanumSquareNeoOTF-Lt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2388D22C264C4DFAB32A6EA9 /* NanumSquareNeoOTF-Lt.otf */; };
+		75CE77F5D4D0487C8C37D4DD /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB100A3D8C734539A39447C1 /* NanumGothicBold.otf */; };
 		7699B88040F8A987B510C191 /* libPods-KaistBlue-KaistBlueTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-KaistBlue-KaistBlueTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9627FC008AB14E0BB1680CF7 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BADF042359B42DF96E8A763 /* NanumGothic.otf */; };
-		75CE77F5D4D0487C8C37D4DD /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB100A3D8C734539A39447C1 /* NanumGothicBold.otf */; };
-		64130F0ECF744B5A890C6354 /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 774184C28B0C47E68E1B8B27 /* NanumGothicExtraBold.otf */; };
-		34A5B45A346C4C5D9DCE7D01 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A373C5D13694F3DA8E41C4D /* NanumGothicLight.otf */; };
-		11BEF5417B9A401C9FAF87BD /* NanumSquareNeoOTF-Bd.otf in Resources */ = {isa = PBXBuildFile; fileRef = B228BDC6008E42A4AC4EE31F /* NanumSquareNeoOTF-Bd.otf */; };
-		5A7FFDADAAB74BB2B5E71551 /* NanumSquareNeoOTF-Eb.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77BABC604F4C458A975E3F96 /* NanumSquareNeoOTF-Eb.otf */; };
-		46C409650AD042BB9DB0DDB8 /* NanumSquareNeoOTF-Hv.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC0A1245642949FB80E7759F /* NanumSquareNeoOTF-Hv.otf */; };
-		72CFF4888D56495CB9F9C8A6 /* NanumSquareNeoOTF-Lt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2388D22C264C4DFAB32A6EA9 /* NanumSquareNeoOTF-Lt.otf */; };
 		939404A9C07344F9BD595B87 /* NanumSquareNeoOTF-Rg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9520B552FCDE4D69BEB8F0F0 /* NanumSquareNeoOTF-Rg.otf */; };
+		9627FC008AB14E0BB1680CF7 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BADF042359B42DF96E8A763 /* NanumGothic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		00E356EE1AD99517003FC87E /* KaistBlueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaistBlueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* KaistBlueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KaistBlueTests.m; sourceTree = "<group>"; };
+		0BADF042359B42DF96E8A763 /* NanumGothic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = NanumGothic.otf; path = ../src/assets/fonts/NanumGothic.otf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* KaistBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaistBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = KaistBlue/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = KaistBlue/AppDelegate.mm; sourceTree = "<group>"; };
@@ -46,22 +48,22 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KaistBlue/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KaistBlue/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-KaistBlue-KaistBlueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KaistBlue-KaistBlueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2388D22C264C4DFAB32A6EA9 /* NanumSquareNeoOTF-Lt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NanumSquareNeoOTF-Lt.otf"; path = "../src/assets/fonts/NanumSquareNeoOTF-Lt.otf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-KaistBlue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaistBlue.debug.xcconfig"; path = "Target Support Files/Pods-KaistBlue/Pods-KaistBlue.debug.xcconfig"; sourceTree = "<group>"; };
+		53C773992AD02CC4000C7F91 /* splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splashscreen.png; path = ../src/assets/splashscreen/splashscreen.png; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-KaistBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaistBlue.release.xcconfig"; path = "Target Support Files/Pods-KaistBlue/Pods-KaistBlue.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-KaistBlue-KaistBlueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaistBlue-KaistBlueTests.debug.xcconfig"; path = "Target Support Files/Pods-KaistBlue-KaistBlueTests/Pods-KaistBlue-KaistBlueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-KaistBlue.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KaistBlue.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		774184C28B0C47E68E1B8B27 /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = NanumGothicExtraBold.otf; path = ../src/assets/fonts/NanumGothicExtraBold.otf; sourceTree = "<group>"; };
+		77BABC604F4C458A975E3F96 /* NanumSquareNeoOTF-Eb.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NanumSquareNeoOTF-Eb.otf"; path = "../src/assets/fonts/NanumSquareNeoOTF-Eb.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = KaistBlue/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-KaistBlue-KaistBlueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaistBlue-KaistBlueTests.release.xcconfig"; path = "Target Support Files/Pods-KaistBlue-KaistBlueTests/Pods-KaistBlue-KaistBlueTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A373C5D13694F3DA8E41C4D /* NanumGothicLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = NanumGothicLight.otf; path = ../src/assets/fonts/NanumGothicLight.otf; sourceTree = "<group>"; };
+		9520B552FCDE4D69BEB8F0F0 /* NanumSquareNeoOTF-Rg.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NanumSquareNeoOTF-Rg.otf"; path = "../src/assets/fonts/NanumSquareNeoOTF-Rg.otf"; sourceTree = "<group>"; };
+		AB100A3D8C734539A39447C1 /* NanumGothicBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = NanumGothicBold.otf; path = ../src/assets/fonts/NanumGothicBold.otf; sourceTree = "<group>"; };
+		B228BDC6008E42A4AC4EE31F /* NanumSquareNeoOTF-Bd.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NanumSquareNeoOTF-Bd.otf"; path = "../src/assets/fonts/NanumSquareNeoOTF-Bd.otf"; sourceTree = "<group>"; };
+		EC0A1245642949FB80E7759F /* NanumSquareNeoOTF-Hv.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NanumSquareNeoOTF-Hv.otf"; path = "../src/assets/fonts/NanumSquareNeoOTF-Hv.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		0BADF042359B42DF96E8A763 /* NanumGothic.otf */ = {isa = PBXFileReference; name = "NanumGothic.otf"; path = "../src/assets/fonts/NanumGothic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AB100A3D8C734539A39447C1 /* NanumGothicBold.otf */ = {isa = PBXFileReference; name = "NanumGothicBold.otf"; path = "../src/assets/fonts/NanumGothicBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		774184C28B0C47E68E1B8B27 /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; name = "NanumGothicExtraBold.otf"; path = "../src/assets/fonts/NanumGothicExtraBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8A373C5D13694F3DA8E41C4D /* NanumGothicLight.otf */ = {isa = PBXFileReference; name = "NanumGothicLight.otf"; path = "../src/assets/fonts/NanumGothicLight.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B228BDC6008E42A4AC4EE31F /* NanumSquareNeoOTF-Bd.otf */ = {isa = PBXFileReference; name = "NanumSquareNeoOTF-Bd.otf"; path = "../src/assets/fonts/NanumSquareNeoOTF-Bd.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		77BABC604F4C458A975E3F96 /* NanumSquareNeoOTF-Eb.otf */ = {isa = PBXFileReference; name = "NanumSquareNeoOTF-Eb.otf"; path = "../src/assets/fonts/NanumSquareNeoOTF-Eb.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EC0A1245642949FB80E7759F /* NanumSquareNeoOTF-Hv.otf */ = {isa = PBXFileReference; name = "NanumSquareNeoOTF-Hv.otf"; path = "../src/assets/fonts/NanumSquareNeoOTF-Hv.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2388D22C264C4DFAB32A6EA9 /* NanumSquareNeoOTF-Lt.otf */ = {isa = PBXFileReference; name = "NanumSquareNeoOTF-Lt.otf"; path = "../src/assets/fonts/NanumSquareNeoOTF-Lt.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9520B552FCDE4D69BEB8F0F0 /* NanumSquareNeoOTF-Rg.otf */ = {isa = PBXFileReference; name = "NanumSquareNeoOTF-Rg.otf"; path = "../src/assets/fonts/NanumSquareNeoOTF-Rg.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		030EE77A7C284915BF0FF755 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0BADF042359B42DF96E8A763 /* NanumGothic.otf */,
+				AB100A3D8C734539A39447C1 /* NanumGothicBold.otf */,
+				774184C28B0C47E68E1B8B27 /* NanumGothicExtraBold.otf */,
+				8A373C5D13694F3DA8E41C4D /* NanumGothicLight.otf */,
+				B228BDC6008E42A4AC4EE31F /* NanumSquareNeoOTF-Bd.otf */,
+				77BABC604F4C458A975E3F96 /* NanumSquareNeoOTF-Eb.otf */,
+				EC0A1245642949FB80E7759F /* NanumSquareNeoOTF-Hv.otf */,
+				2388D22C264C4DFAB32A6EA9 /* NanumSquareNeoOTF-Lt.otf */,
+				9520B552FCDE4D69BEB8F0F0 /* NanumSquareNeoOTF-Rg.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* KaistBlue */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +126,7 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				53C773992AD02CC4000C7F91 /* splashscreen.png */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -166,23 +185,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		030EE77A7C284915BF0FF755 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				0BADF042359B42DF96E8A763 /* NanumGothic.otf */,
-				AB100A3D8C734539A39447C1 /* NanumGothicBold.otf */,
-				774184C28B0C47E68E1B8B27 /* NanumGothicExtraBold.otf */,
-				8A373C5D13694F3DA8E41C4D /* NanumGothicLight.otf */,
-				B228BDC6008E42A4AC4EE31F /* NanumSquareNeoOTF-Bd.otf */,
-				77BABC604F4C458A975E3F96 /* NanumSquareNeoOTF-Eb.otf */,
-				EC0A1245642949FB80E7759F /* NanumSquareNeoOTF-Hv.otf */,
-				2388D22C264C4DFAB32A6EA9 /* NanumSquareNeoOTF-Lt.otf */,
-				9520B552FCDE4D69BEB8F0F0 /* NanumSquareNeoOTF-Rg.otf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -284,6 +286,7 @@
 				75CE77F5D4D0487C8C37D4DD /* NanumGothicBold.otf in Resources */,
 				64130F0ECF744B5A890C6354 /* NanumGothicExtraBold.otf in Resources */,
 				34A5B45A346C4C5D9DCE7D01 /* NanumGothicLight.otf in Resources */,
+				53C7739A2AD02CC4000C7F91 /* splashscreen.png in Resources */,
 				11BEF5417B9A401C9FAF87BD /* NanumSquareNeoOTF-Bd.otf in Resources */,
 				5A7FFDADAAB74BB2B5E71551 /* NanumSquareNeoOTF-Eb.otf in Resources */,
 				46C409650AD042BB9DB0DDB8 /* NanumSquareNeoOTF-Hv.otf in Resources */,
@@ -649,7 +652,6 @@
 					"$(inherited)",
 					"-Wl",
 					"-ld_classic",
-					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
@@ -724,7 +726,6 @@
 					"$(inherited)",
 					"-Wl",
 					"-ld_classic",
-					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
