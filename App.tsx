@@ -1,28 +1,13 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import 'react-native-gesture-handler';
 
-import CommonText from '@/components/CommonText';
-import React, {useEffect} from 'react';
-import {SafeAreaView} from 'react-native';
-import RNBootSplash from 'react-native-bootsplash';
+import RootStackNavigator from '@/navigators/RootStackNavigator';
+import {NavigationContainer} from '@react-navigation/native';
+import * as React from 'react';
 
-function App(): JSX.Element {
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('3초 뒤에 실행됩니다.');
-      RNBootSplash.hide();
-    }, 3000);
-  }, []);
-
+export default function App() {
   return (
-    <SafeAreaView>
-      <CommonText>안녕하세요.</CommonText>
-    </SafeAreaView>
+    <NavigationContainer>
+      <RootStackNavigator />
+    </NavigationContainer>
   );
 }
-
-export default App;
