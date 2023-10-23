@@ -9,7 +9,9 @@ import React from 'react';
 
 export type RootStackParamList = {
   SignIn: undefined;
-  ClubHome: undefined;
+  ClubHome: {
+    id: string;
+  };
   ClubList: undefined;
   ArticleView: undefined;
   ArticleAdd: undefined;
@@ -20,8 +22,20 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootStackNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="SignIn" component={SignInScreen} />
-      <Stack.Screen name="ClubList" component={ClubListScreen} />
+      <Stack.Screen
+        name="SignIn"
+        component={SignInScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="ClubList"
+        component={ClubListScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen name="ClubHome" component={ClubHomeScreen} />
       <Stack.Screen name="ArticleView" component={ArticleViewScreen} />
       <Stack.Screen name="ArticleAdd" component={ArticleAddScreen} />
