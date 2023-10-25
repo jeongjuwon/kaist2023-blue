@@ -55,7 +55,7 @@ const ProfileAddScreen: FC<Props> = ({navigation, route}) => {
 
   return (
     <Container style={{paddingBottom: bottom}}>
-      <NavigatorGrayHeader title="프로필 수정" />
+      <NavigatorGrayHeader title={id ? '프로필수정' : '회원가입'} />
       <InnerContainer>
         <ProfileImageContainer>
           <ProfileImage

@@ -7,6 +7,7 @@ import {FlatList} from 'react-native';
 
 const Container = styled.SafeAreaView`
   flex: 1;
+  padding-top: 20px;
 `;
 
 const ItemContainer = styled.TouchableOpacity`
