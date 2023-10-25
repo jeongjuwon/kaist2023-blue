@@ -71,6 +71,7 @@ const ClubListScreen: FC<Props> = ({navigation}) => {
   const onPress = useCallback(
     (id: string) => () => {
       navigation.navigate('ClubHome', {id});
+      // navigation.navigate('ProfileAdd', {});
     },
     [navigation],
   );

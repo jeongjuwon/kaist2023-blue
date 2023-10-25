@@ -13,9 +13,13 @@ export type RootStackParamList = {
     id: string;
   };
   ClubList: undefined;
-  ArticleView: undefined;
+  ArticleView: {
+    id: string;
+  };
   ArticleAdd: undefined;
-  ProfileAdd: undefined;
+  ProfileAdd: {
+    id?: string;
+  };
 };
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -36,10 +40,34 @@ function RootStackNavigator() {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="ClubHome" component={ClubHomeScreen} />
-      <Stack.Screen name="ArticleView" component={ArticleViewScreen} />
-      <Stack.Screen name="ArticleAdd" component={ArticleAddScreen} />
-      <Stack.Screen name="ProfileAdd" component={ProfileAddScreen} />
+      <Stack.Screen
+        name="ClubHome"
+        component={ClubHomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="ArticleView"
+        component={ArticleViewScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="ArticleAdd"
+        component={ArticleAddScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="ProfileAdd"
+        component={ProfileAddScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 }
