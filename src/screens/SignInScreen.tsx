@@ -49,6 +49,10 @@ const SignInScreen: FC<Props> = ({navigation}) => {
     navigation.navigate('ClubList');
   }, [navigation]);
 
+  const onChangeId = useCallback((text: string) => {}, []);
+
+  const onChangePassword = useCallback((text: string) => {}, []);
+
   const onSignUp = useCallback(() => {
     navigation.navigate('SignUp');
   }, [navigation]);
@@ -56,8 +60,16 @@ const SignInScreen: FC<Props> = ({navigation}) => {
   return (
     <Container source={require('@/assets/images/signin_background.png')}>
       <LogoText>Blue</LogoText>
-      <SignInInput placeholder="Username" style={{marginBottom: 19}} />
-      <SignInInput placeholder="Password" style={{marginBottom: 19}} />
+      <SignInInput
+        placeholder="아이디를 입력하세요."
+        style={{marginBottom: 19}}
+        onChangeText={onChangeId}
+      />
+      <SignInInput
+        placeholder="비밀번호를 입력하세요."
+        style={{marginBottom: 19}}
+        onChangeText={onChangePassword}
+      />
       <SignInButton style={{marginBottom: 50}} onPress={onSignIn} />
       <NotAMemberText>만약 회원이 아니라면</NotAMemberText>
       <SignUpButton onPress={onSignUp}>
