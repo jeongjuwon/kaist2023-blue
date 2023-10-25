@@ -84,12 +84,13 @@ const Item = ({title, nickname, publishedAt, content, onPress}: ItemProps) => (
 );
 
 type Props = StackScreenProps<RootStackParamList, 'ClubHome'>;
-const ClubHomeScreen: FC<Props> = ({navigation}) => {
+const ClubHomeScreen: FC<Props> = ({navigation, route}) => {
+  const {communityId} = route.params;
   const onPress = useCallback(
-    (id: string) => () => {
-      navigation.navigate('ArticleView', {id});
+    (id: number) => () => {
+      navigation.navigate('ArticleView', {communityId, id});
     },
-    [navigation],
+    [communityId, navigation],
   );
 
   const onBack = useCallback(() => {
@@ -97,8 +98,8 @@ const ClubHomeScreen: FC<Props> = ({navigation}) => {
   }, [navigation]);
 
   const onWrite = useCallback(() => {
-    navigation.navigate('ArticleAdd');
-  }, [navigation]);
+    navigation.navigate('ArticleAdd', {communityId});
+  }, [communityId, navigation]);
 
   return (
     <Container>

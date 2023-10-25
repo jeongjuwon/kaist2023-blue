@@ -1,10 +1,11 @@
 import CancelButton from '@/components/CancelButton';
 import NavigatorGrayHeader from '@/components/NavigatorGrayHeader';
 import SubmitButton from '@/components/SubmitButton';
+import axiosClient from '@/libs/axiosClient';
 import {RootStackParamList} from '@/navigators/RootStackNavigator';
 import styled from '@emotion/native';
 import {StackScreenProps} from '@react-navigation/stack';
-import React, {FC, useCallback} from 'react';
+import React, {FC, useCallback, useState} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const Container = styled.View`
@@ -47,16 +48,25 @@ const StyledTextInput = styled.TextInput`
 `;
 
 type Props = StackScreenProps<RootStackParamList, 'ArticleAdd'>;
-const ArticleAddScreen: FC<Props> = ({navigation}) => {
+const ArticleAddScreen: FC<Props> = ({navigation, route}) => {
   const {bottom} = useSafeAreaInsets();
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const {communityId} = route.params;
 
   const onCancel = useCallback(() => {
     navigation.goBack();
   }, [navigation]);
 
-  const onSubmit = useCallback(() => {
+  const onSubmit = useCallback(async () => {
+    const response = await axiosClient.post('board/save', {
+      title,
+      content,
+      communityId,
+    });
+    console.log('response', response);
     navigation.goBack();
-  }, [navigation]);
+  }, [communityId, content, navigation, title]);
 
   return (
     <Container style={{paddingBottom: bottom}}>
@@ -66,12 +76,16 @@ const ArticleAddScreen: FC<Props> = ({navigation}) => {
           <StyledTextInput
             placeholder="제목을 입력해주세요."
             placeholderTextColor={'#7d7d7d'}
+            onChangeText={setTitle}
+            value={title}
           />
         </TitleContainer>
         <ContentsContainer>
           <StyledTextInput
             placeholder="내용을 입력해주세요."
             placeholderTextColor={'#7d7d7d'}
+            onChangeText={setContent}
+            value={content}
           />
         </ContentsContainer>
       </InnerContainer>

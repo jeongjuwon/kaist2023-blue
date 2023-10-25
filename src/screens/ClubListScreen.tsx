@@ -1,8 +1,9 @@
 import CommonText from '@/components/CommonText.android';
+import axiosClient from '@/libs/axiosClient';
 import {RootStackParamList} from '@/navigators/RootStackNavigator';
 import styled from '@emotion/native';
 import {StackScreenProps} from '@react-navigation/stack';
-import React, {FC, useCallback} from 'react';
+import React, {FC, useCallback, useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
 
 const Container = styled.SafeAreaView`
@@ -13,11 +14,17 @@ const Container = styled.SafeAreaView`
 const ItemContainer = styled.TouchableOpacity`
   border-radius: 20px;
   height: 169px;
-  padding-top: 25px;
-  align-items: center;
   background-color: #000;
   margin-bottom: 29px;
   margin-horizontal: 16px;
+  padding-horizontal: 0px;
+`;
+
+const ItemBackgroundContainer = styled.ImageBackground`
+  flex: 1;
+  padding-top: 25px;
+  align-items: center;
+  border-radius: 20px;
 `;
 
 const ItemTitle = styled(CommonText)`
@@ -40,56 +47,84 @@ const ItemDesc = styled(CommonText)`
   line-height: 18.2px;
 `;
 
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: '사진과 감성',
-    desc: '식재료부터 요리, 배움의 즐거움을 느껴보세요!\n새로운 친구들과 함께하는 즐거움이 가득합니다.',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: '사진과 감성',
-    desc: '식재료부터 요리, 배움의 즐거움을 느껴보세요!\n새로운 친구들과 함께하는 즐거움이 가득합니다.',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: '사진과 감성',
-    desc: '식재료부터 요리, 배움의 즐거움을 느껴보세요!\n새로운 친구들과 함께하는 즐거움이 가득합니다.',
-  },
-];
+type ItemProps = {
+  title: string;
+  desc: string;
+  imageStr?: string;
+  onPress: () => void;
+};
 
-type ItemProps = {title: string; desc: string; onPress: () => void};
-
-const Item = ({title, desc, onPress}: ItemProps) => (
+const Item = ({title, desc, imageStr, onPress}: ItemProps) => (
   <ItemContainer onPress={onPress}>
-    <ItemTitle>{title}</ItemTitle>
-    <ItemDesc>{desc}</ItemDesc>
+    <ItemBackgroundContainer source={{uri: imageStr}}>
+      <ItemTitle>{title}</ItemTitle>
+      <ItemDesc>{desc}</ItemDesc>
+    </ItemBackgroundContainer>
   </ItemContainer>
 );
 
+type Data = {
+  id: number;
+  title: string;
+  summary: string;
+  status?: string;
+  createdAt: Date;
+  image: string;
+  imageStr?: string;
+  type: string;
+};
+
 type Props = StackScreenProps<RootStackParamList, 'ClubList'>;
 const ClubListScreen: FC<Props> = ({navigation}) => {
+  const [clubList, setClubList] = useState<Data[]>([]);
+
   const onPress = useCallback(
-    (id: string) => () => {
-      navigation.navigate('ClubHome', {id});
-      // navigation.navigate('ProfileAdd', {});
+    (id: number) => async () => {
+      try {
+        const response = await axiosClient.post('community/list/user', {});
+
+        const filtered = response.data.data.filter(
+          (item: any) => item.communityId === id && !!item.userId,
+        );
+
+        if (filtered.length === 0) {
+          navigation.navigate('ProfileAdd', {
+            communityId: id,
+          });
+        } else {
+          navigation.navigate('ClubHome', {communityId: id});
+        }
+      } catch (e) {
+        console.error(e);
+      }
     },
     [navigation],
   );
 
+  useEffect(() => {
+    async function init() {
+      const response = await axiosClient.get('community/list');
+      setClubList(response.data.data);
+    }
+    init();
+  }, []);
+
   return (
     <Container>
-      <FlatList
-        data={DATA}
-        renderItem={({item}) => (
-          <Item
-            title={item.title}
-            desc={item.desc}
-            onPress={onPress(item.id)}
-          />
-        )}
-        keyExtractor={item => item.id}
-      />
+      {clubList.length > 0 && (
+        <FlatList
+          data={clubList}
+          renderItem={({item}) => (
+            <Item
+              title={item.title}
+              desc={item.summary}
+              onPress={onPress(item.id)}
+              imageStr={`${item.type}${item.image}`}
+            />
+          )}
+          keyExtractor={item => item.id.toString()}
+        />
+      )}
     </Container>
   );
 };

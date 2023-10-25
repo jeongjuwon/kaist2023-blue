@@ -5,81 +5,104 @@ import ClubListScreen from '@/screens/ClubListScreen';
 import ProfileAddScreen from '@/screens/ProfileAddScreen';
 import SignInScreen from '@/screens/SignInScreen';
 import SignUpScreen from '@/screens/SignUpScreen';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
-import React from 'react';
+import React, {useEffect} from 'react';
 
 export type RootStackParamList = {
   SignIn: undefined;
   SignUp: undefined;
   ClubHome: {
-    id: string;
+    communityId: number;
   };
   ClubList: undefined;
   ArticleView: {
-    id: string;
+    communityId: number;
+    id: number;
   };
-  ArticleAdd: undefined;
+  ArticleAdd: {
+    communityId: number;
+  };
   ProfileAdd: {
-    id?: string;
+    communityId: number;
+    id?: number;
   };
 };
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootStackNavigator() {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  useEffect(() => {
+    async function init() {
+      const token = await AsyncStorage.getItem('token');
+      setIsLoggedIn(!!token);
+    }
+
+    init();
+  }, []);
   return (
     <Stack.Navigator
       screenOptions={{
         ...TransitionPresets.SlideFromRightIOS,
-      }}>
-      <Stack.Screen
-        name="SignIn"
-        component={SignInScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="SignUp"
-        component={SignUpScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="ClubList"
-        component={ClubListScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="ClubHome"
-        component={ClubHomeScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="ArticleView"
-        component={ArticleViewScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="ArticleAdd"
-        component={ArticleAddScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="ProfileAdd"
-        component={ProfileAddScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
+      }}
+      initialRouteName={isLoggedIn ? 'ClubList' : 'SignIn'}>
+      {isLoggedIn === false ? (
+        <>
+          <Stack.Screen
+            name="SignIn"
+            component={SignInScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUpScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </>
+      ) : (
+        <>
+          <Stack.Screen
+            name="ClubList"
+            component={ClubListScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="ClubHome"
+            component={ClubHomeScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="ArticleView"
+            component={ArticleViewScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="ArticleAdd"
+            component={ArticleAddScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="ProfileAdd"
+            component={ProfileAddScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </>
+      )}
     </Stack.Navigator>
   );
 }

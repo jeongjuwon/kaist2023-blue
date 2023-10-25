@@ -1,10 +1,12 @@
 import CommonText from '@/components/CommonText.android';
 import SignInButton from '@/components/SignInButton';
 import SignInInput from '@/components/SignInInput';
+import axiosClient from '@/libs/axiosClient';
 import {RootStackParamList} from '@/navigators/RootStackNavigator';
 import styled from '@emotion/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {StackScreenProps} from '@react-navigation/stack';
-import React, {FC, useCallback} from 'react';
+import React, {FC, useCallback, useState} from 'react';
 import {ImageBackground} from 'react-native';
 
 type Props = StackScreenProps<RootStackParamList, 'SignIn'>;
@@ -45,13 +47,31 @@ const SignUpText = styled(CommonText)`
 `;
 
 const SignInScreen: FC<Props> = ({navigation}) => {
-  const onSignIn = useCallback(() => {
-    navigation.navigate('ClubList');
-  }, [navigation]);
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
 
-  const onChangeId = useCallback((text: string) => {}, []);
+  const onSignIn = useCallback(async () => {
+    // todo: 네트워킹
+    try {
+      const response = await axiosClient.post('auth/authenticate', {
+        userId: id,
+        upassword: password,
+      });
+      console.log('response', response);
+      await AsyncStorage.setItem('token', response.data.token);
+      navigation.navigate('ClubList');
+    } catch (e) {
+      console.log(e);
+    }
+  }, [id, navigation, password]);
 
-  const onChangePassword = useCallback((text: string) => {}, []);
+  const onChangeId = useCallback((text: string) => {
+    setId(text);
+  }, []);
+
+  const onChangePassword = useCallback((text: string) => {
+    setPassword(text);
+  }, []);
 
   const onSignUp = useCallback(() => {
     navigation.navigate('SignUp');

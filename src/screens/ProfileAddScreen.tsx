@@ -2,10 +2,12 @@ import CancelButton from '@/components/CancelButton';
 import NavigatorGrayHeader from '@/components/NavigatorGrayHeader';
 import NicknameInput from '@/components/NicknameInput';
 import SubmitButton from '@/components/SubmitButton';
+import axiosClient from '@/libs/axiosClient';
 import {RootStackParamList} from '@/navigators/RootStackNavigator';
 import styled from '@emotion/native';
 import {StackScreenProps} from '@react-navigation/stack';
-import React, {FC, useCallback} from 'react';
+import React, {FC, useCallback, useState} from 'react';
+import {launchImageLibrary} from 'react-native-image-picker';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const Container = styled.View`
@@ -29,7 +31,7 @@ const ProfileImage = styled.Image`
   width: 160px;
   height: 160px;
   border-radius: 80px;
-  resize-mode: contain;
+  resize-mode: cover;
 `;
 
 const ButtonContainer = styled.View`
@@ -43,26 +45,60 @@ const ButtonContainer = styled.View`
 type Props = StackScreenProps<RootStackParamList, 'ProfileAdd'>;
 const ProfileAddScreen: FC<Props> = ({navigation, route}) => {
   const {bottom} = useSafeAreaInsets();
-  const {id} = route.params;
+  const {id, communityId} = route.params;
+  const [nickName, setNickname] = useState('');
+  const [profileImage, setProfileImage] = useState('');
+
+  const onChangeNickName = useCallback((text: string) => {
+    setNickname(text);
+  }, []);
+
+  const onChangeProfileImage = useCallback(async () => {
+    const result = await launchImageLibrary({
+      mediaType: 'photo',
+      selectionLimit: 1,
+      includeBase64: true,
+    });
+
+    if (!result?.assets) {
+      return;
+    }
+
+    setProfileImage(`data:image/png;base64,${result.assets[0].base64}`);
+  }, []);
 
   const onCancel = useCallback(() => {
     navigation.goBack();
   }, [navigation]);
 
-  const onSubmit = useCallback(() => {
+  const onSubmit = useCallback(async () => {
+    const response = await axiosClient.post('community/user/add', {
+      communityId,
+      nickName,
+      sortNo: '0',
+      imageStr: profileImage,
+    });
+    console.log(response);
     navigation.goBack();
-  }, [navigation]);
+  }, [communityId, navigation, nickName, profileImage]);
 
   return (
     <Container style={{paddingBottom: bottom}}>
       <NavigatorGrayHeader title={id ? '프로필수정' : '회원가입'} />
       <InnerContainer>
-        <ProfileImageContainer>
-          <ProfileImage
-            source={require('@/assets/images/empty-profile-icon-512.png')}
-          />
+        <ProfileImageContainer onPress={onChangeProfileImage}>
+          {profileImage ? (
+            <ProfileImage source={{uri: profileImage}} />
+          ) : (
+            <ProfileImage
+              source={require('@/assets/images/empty-profile-icon-512.png')}
+            />
+          )}
         </ProfileImageContainer>
-        <NicknameInput placeholder="넥네임을 입력해주세요." />
+        <NicknameInput
+          placeholder="닉네임을 입력해주세요."
+          onChangeText={onChangeNickName}
+        />
       </InnerContainer>
       <ButtonContainer>
         <CancelButton onPress={onCancel} />
