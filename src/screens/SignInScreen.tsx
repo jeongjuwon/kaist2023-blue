@@ -35,6 +35,8 @@ const NotAMemberText = styled(CommonText)`
   margin-bottom: 13px;
 `;
 
+const SignUpButton = styled.TouchableOpacity``;
+
 const SignUpText = styled(CommonText)`
   color: #a9e0ff;
   font-size: 13px;
@@ -47,6 +49,10 @@ const SignInScreen: FC<Props> = ({navigation}) => {
     navigation.navigate('ClubList');
   }, [navigation]);
 
+  const onSignUp = useCallback(() => {
+    navigation.navigate('SignUp');
+  }, [navigation]);
+
   return (
     <Container source={require('@/assets/images/signin_background.png')}>
       <LogoText>Blue</LogoText>
@@ -54,7 +60,9 @@ const SignInScreen: FC<Props> = ({navigation}) => {
       <SignInInput placeholder="Password" style={{marginBottom: 19}} />
       <SignInButton style={{marginBottom: 50}} onPress={onSignIn} />
       <NotAMemberText>만약 회원이 아니라면</NotAMemberText>
-      <SignUpText>회원가입</SignUpText>
+      <SignUpButton onPress={onSignUp}>
+        <SignUpText>회원가입</SignUpText>
+      </SignUpButton>
     </Container>
   );
 };

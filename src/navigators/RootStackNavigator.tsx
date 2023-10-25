@@ -4,11 +4,13 @@ import ClubHomeScreen from '@/screens/ClubHomeScreen';
 import ClubListScreen from '@/screens/ClubListScreen';
 import ProfileAddScreen from '@/screens/ProfileAddScreen';
 import SignInScreen from '@/screens/SignInScreen';
-import {createStackNavigator} from '@react-navigation/stack';
+import SignUpScreen from '@/screens/SignUpScreen';
+import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import React from 'react';
 
 export type RootStackParamList = {
   SignIn: undefined;
+  SignUp: undefined;
   ClubHome: {
     id: string;
   };
@@ -25,10 +27,20 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 function RootStackNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        ...TransitionPresets.SlideFromRightIOS,
+      }}>
       <Stack.Screen
         name="SignIn"
         component={SignInScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUpScreen}
         options={{
           headerShown: false,
         }}
