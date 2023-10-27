@@ -38,3 +38,31 @@ npx react-native run-ios
 ```
 npx react-native run-android
 ```
+
+# 서버 실행하기
+
+1. Docker
+
+   ```
+   npm run docker:start
+   ```
+
+2. API Server
+
+   ```
+   npm run server:start
+   ```
+
+3. Seed Data (최초 한번)
+
+   ```
+   npm run seed
+   ```
+
+4. Postman Import
+
+   포스트맨을 다운로드 받고 아래의 파일을 가져오기 한다.
+
+   ```
+   blue-backend/postman.json
+   ```
