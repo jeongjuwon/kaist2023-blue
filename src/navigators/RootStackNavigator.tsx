@@ -47,7 +47,7 @@ function RootStackNavigator() {
         ...TransitionPresets.SlideFromRightIOS,
       }}
       initialRouteName={isLoggedIn ? 'ClubList' : 'SignIn'}>
-      {isLoggedIn === false ? (
+      {isLoggedIn === false && (
         <>
           <Stack.Screen
             name="SignIn"
@@ -64,45 +64,44 @@ function RootStackNavigator() {
             }}
           />
         </>
-      ) : (
-        <>
-          <Stack.Screen
-            name="ClubList"
-            component={ClubListScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="ClubHome"
-            component={ClubHomeScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="ArticleView"
-            component={ArticleViewScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="ArticleAdd"
-            component={ArticleAddScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="ProfileAdd"
-            component={ProfileAddScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-        </>
       )}
+      <>
+        <Stack.Screen
+          name="ClubList"
+          component={ClubListScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="ClubHome"
+          component={ClubHomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="ArticleView"
+          component={ArticleViewScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="ArticleAdd"
+          component={ArticleAddScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="ProfileAdd"
+          component={ProfileAddScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </>
     </Stack.Navigator>
   );
 }
